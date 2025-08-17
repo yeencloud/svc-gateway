@@ -1,8 +1,6 @@
 module github.com/yeencloud/bpt-service
 
-go 1.23.0
-
-toolchain go1.23.4
+go 1.24
 
 require (
 	github.com/99designs/gqlgen v0.17.78
@@ -11,7 +9,7 @@ require (
 	github.com/samber/lo v1.51.0
 	github.com/vektah/gqlparser/v2 v2.5.30
 	github.com/yeencloud/lib-base v0.3.0
-	github.com/yeencloud/lib-httpserver v0.2.4
+	github.com/yeencloud/lib-httpserver v0.2.6
 )
 
 require (
@@ -68,6 +66,7 @@ require (
 	github.com/ugorji/go/codec v1.2.12 // indirect
 	github.com/yeencloud/lib-database v0.2.4 // indirect
 	github.com/yeencloud/lib-events v0.1.5 // indirect
+	github.com/yeencloud/lib-httpserver/contract v1.0.0 // indirect
 	github.com/yeencloud/lib-metrics v0.2.5 // indirect
 	github.com/yeencloud/lib-shared v0.2.9 // indirect
 	golang.org/x/arch v0.16.0 // indirect
