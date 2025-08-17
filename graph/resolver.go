@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/samber/lo"
-	"github.com/yeencloud/bpt-service/graph/model"
+	"github.com/yeencloud/svc-gateway/graph/model"
 )
 
 // This file will not be regenerated automatically.

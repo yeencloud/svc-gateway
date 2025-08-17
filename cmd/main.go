@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 
-	"github.com/yeencloud/bpt-service/internal/adapters/http"
-	"github.com/yeencloud/bpt-service/internal/service"
 	baseservice "github.com/yeencloud/lib-base"
+	"github.com/yeencloud/svc-gateway/internal/adapters/http"
+	"github.com/yeencloud/svc-gateway/internal/service"
 )
 
 func main() {

@@ -1,8 +1,8 @@
 package http
 
 import (
-	"github.com/yeencloud/bpt-service/internal/ports"
 	httpserver "github.com/yeencloud/lib-httpserver"
+	"github.com/yeencloud/svc-gateway/internal/ports"
 )
 
 type HTTPServer struct {

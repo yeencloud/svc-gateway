@@ -16,7 +16,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/introspection"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
-	"github.com/yeencloud/bpt-service/graph/model"
+	"github.com/yeencloud/svc-gateway/graph/model"
 )
 
 // region    ************************** generated!.gotpl **************************

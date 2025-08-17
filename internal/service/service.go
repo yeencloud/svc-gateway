@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/yeencloud/bpt-service/internal/ports"
+	"github.com/yeencloud/svc-gateway/internal/ports"
 )
 
 type service struct {

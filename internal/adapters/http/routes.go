@@ -5,7 +5,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
-	"github.com/yeencloud/bpt-service/graph"
+	"github.com/yeencloud/svc-gateway/graph"
 )
 
 func (s *HTTPServer) registerRoutes(engine *gin.Engine) {

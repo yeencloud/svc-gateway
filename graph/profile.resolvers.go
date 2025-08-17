@@ -8,7 +8,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/yeencloud/bpt-service/graph/model"
+	"github.com/yeencloud/svc-gateway/graph/model"
 )
 
 // UpdateProfile is the resolver for the updateProfile field.

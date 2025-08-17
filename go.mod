@@ -1,4 +1,4 @@
-module github.com/yeencloud/bpt-service
+module github.com/yeencloud/svc-gateway
 
 go 1.23.0
 
