@@ -1,0 +1,17 @@
+extend type Query {
+    profile(id: ID!): Profile
+}
+
+extend type Mutation {
+    updateProfile(input: UpdateProfileInput!): Profile!
+}
+
+type Profile {
+    id: ID!
+    bio: String
+}
+
+input UpdateProfileInput {
+    id: ID!
+    bio: String
+}
