@@ -14,6 +14,8 @@ import (
 type Resolver struct{}
 
 func (r *Resolver) getProfile(ctx context.Context, id string) (*model.Profile, error) {
+	_ = ctx
+
 	return &model.Profile{
 		ID:  id,
 		Bio: lo.ToPtr("Tiefling Archer Lv. 12"),

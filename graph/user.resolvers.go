@@ -13,11 +13,14 @@ import (
 
 // CreateUser is the resolver for the createUser field.
 func (r *mutationResolver) CreateUser(ctx context.Context, input model.CreateUserInput) (*model.User, error) {
+	_, _ = ctx, input
+
 	panic(fmt.Errorf("not implemented: CreateUser - createUser"))
 }
 
 // User is the resolver for the user field.
 func (r *queryResolver) User(ctx context.Context, id string) (*model.User, error) {
+	_, _ = ctx, id
 	return &model.User{
 		ID:   "id-1",
 		Name: "some guy",
@@ -26,6 +29,7 @@ func (r *queryResolver) User(ctx context.Context, id string) (*model.User, error
 
 // Profile is the resolver for the profile field.
 func (r *userResolver) Profile(ctx context.Context, obj *model.User) (*model.Profile, error) {
+	_ = obj
 	return r.Resolver.getProfile(ctx, "5")
 }
 

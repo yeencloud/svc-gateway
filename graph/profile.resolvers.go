@@ -17,7 +17,7 @@ func (r *mutationResolver) UpdateProfile(ctx context.Context, input model.Update
 }
 
 func (r *queryResolver) Profile(ctx context.Context, id string) (*model.Profile, error) {
-	// Profile is the resolver for the profile field.
+	_ = ctx
 	return r.Resolver.getProfile(ctx, id)
 }
 
