@@ -85,17 +85,3 @@ require (
 )
 
 replace github.com/yeencloud/svc-gateway => /Users/alice/Developer/Yeencloud/backend/libs/lib-technical/lib-shared/
-
-replace github.com/yeencloud/svc-identity => /Users/alice/Developer/Yeencloud/backend/svc/svc-identity/
-
-replace github.com/yeencloud/lib-base => /Users/alice/Developer/yeencloud/backend/libs/lib-technical/lib-base/
-
-replace github.com/yeencloud/lib-httpserver => /Users/alice/Developer/yeencloud/backend/libs/lib-technical/lib-httpserver/
-
-replace github.com/yeencloud/lib-database => /Users/alice/Developer/yeencloud/backend/libs/lib-technical/lib-database/
-
-replace github.com/yeencloud/lib-events => /Users/alice/Developer/yeencloud/backend/libs/lib-technical/lib-events/
-
-replace github.com/yeencloud/lib-metrics => /Users/alice/Developer/yeencloud/backend/libs/lib-technical/lib-metrics/
-
-replace github.com/yeencloud/lib-shared => /Users/alice/Developer/yeencloud/backend/libs/lib-technical/lib-shared/
