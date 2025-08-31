@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	baseservice.Run("base-service", baseservice.Options{
+	baseservice.Run("svc-gateway", baseservice.Options{
 		UseDatabase: false,
 		UseEvents:   false,
 	}, func(ctx context.Context, svc *baseservice.BaseService) error {

@@ -5,6 +5,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
+	"github.com/yeencloud/svc-gateway/contract"
 	"github.com/yeencloud/svc-gateway/graph"
 )
 
@@ -12,15 +13,14 @@ func (s *HTTPServer) registerRoutes(engine *gin.Engine) {
 	debug := engine.Group("/debug")
 	r := engine.Use(s.server.RequireCorrelationID, s.server.RequireRequestID)
 
+	contract.RegisterRoutes(r, s)
+
 	r.POST("/query", s.graphqlHandler())
 	debug.GET("/", s.playgroundHandler())
 }
 
-// Defining the Graphql handler
 func (s *HTTPServer) graphqlHandler() gin.HandlerFunc {
-	// NewExecutableSchema and Config are in the generated.go file
-	// Resolver is in the resolver.go file
-	h := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
+	h := handler.New(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
 	return func(c *gin.Context) {
 		h.ServeHTTP(c.Writer, c.Request)
 	}
