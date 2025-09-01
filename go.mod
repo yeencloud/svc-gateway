@@ -83,5 +83,3 @@ require (
 	gorm.io/driver/postgres v1.5.11 // indirect
 	gorm.io/gorm v1.25.12 // indirect
 )
-
-replace github.com/yeencloud/svc-gateway => /Users/alice/Developer/Yeencloud/backend/libs/lib-technical/lib-shared/
