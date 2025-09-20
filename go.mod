@@ -10,8 +10,8 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	github.com/vektah/gqlparser/v2 v2.5.30
 	github.com/yeencloud/lib-base v0.3.0
-	github.com/yeencloud/lib-httpserver v0.2.4
-	github.com/yeencloud/svc-identity v0.2.4
+	github.com/yeencloud/lib-httpserver v0.2.7
+	github.com/yeencloud/svc-identity v0.0.5
 	google.golang.org/grpc v1.75.0
 )
 
@@ -66,11 +66,11 @@ require (
 	github.com/sosodev/duration v1.3.1 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
-	github.com/yeencloud/lib-database v0.2.4 // indirect
-	github.com/yeencloud/lib-events v0.1.6 // indirect
+	github.com/yeencloud/lib-database v0.2.6 // indirect
+	github.com/yeencloud/lib-events v0.1.7 // indirect
 	github.com/yeencloud/lib-httpserver/contract v1.0.0 // indirect
-	github.com/yeencloud/lib-metrics v0.2.5 // indirect
-	github.com/yeencloud/lib-shared v0.2.10 // indirect
+	github.com/yeencloud/lib-metrics v0.2.7 // indirect
+	github.com/yeencloud/lib-shared v0.2.11 // indirect
 	golang.org/x/arch v0.16.0 // indirect
 	golang.org/x/crypto v0.41.0 // indirect
 	golang.org/x/net v0.43.0 // indirect
