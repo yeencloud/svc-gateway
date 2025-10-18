@@ -38,5 +38,9 @@ func (s *HTTPServer) RegisterUser(gctx *gin.Context) {
 		Password: "B",
 	})
 
+	if err != nil {
+		s.server.ReplyWithError(gctx, err)
+	}
+
 	log.Printf("ID: %s", r.Id)
 }
