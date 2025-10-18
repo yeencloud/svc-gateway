@@ -73,6 +73,7 @@ httpServer:
 ingress:
   enabled: false
   className: ""
+  host: ""
 
 grpc: 
   enabled: false
