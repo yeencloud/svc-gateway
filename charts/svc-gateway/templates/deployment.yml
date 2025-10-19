@@ -17,10 +17,11 @@ spec:
       #annotations:
       #  checksum/metrics-config: {{ include (print $.Template.BasePath "/config.metrics.yml") . | sha256sum }}
     spec:
+      replicas: {{ .Values.replicas }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }} 
+          imagePullPolicy: {{ .Values.image.pullPolicy }}     
           envFrom:
             - configMapRef:
                 name: {{ .Chart.Name }}-metrics
