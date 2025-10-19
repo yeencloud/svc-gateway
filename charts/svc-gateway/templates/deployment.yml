@@ -25,3 +25,6 @@ spec:
       affinity:
         {{- toYaml . | nindent 8 }}
     {{- end }}
+    envFrom:
+      - configMapRef:
+          name: {{ .Chart.Name }}-metrics
