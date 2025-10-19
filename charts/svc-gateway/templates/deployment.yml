@@ -4,7 +4,6 @@ kind: Deployment
 metadata:
   name: "{{ .Values.nameOverride }}"
 spec:
-  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       type: infra
@@ -17,7 +16,7 @@ spec:
       #annotations:
       #  checksum/metrics-config: {{ include (print $.Template.BasePath "/config.metrics.yml") . | sha256sum }}
     spec:
-      replicas: {{ .Values.replicas }}
+      replicas: {{ .Values.resources.replicas }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
