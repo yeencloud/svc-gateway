@@ -4,7 +4,6 @@ go 1.25
 
 require (
 	github.com/99designs/gqlgen v0.17.78
-	github.com/davecgh/go-spew v1.1.1
 	github.com/gin-gonic/gin v1.10.0
 	github.com/google/uuid v1.6.0
 	github.com/samber/lo v1.51.0

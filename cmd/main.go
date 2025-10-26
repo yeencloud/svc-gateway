@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 
-	"github.com/davecgh/go-spew/spew"
 	baseservice "github.com/yeencloud/lib-base"
 	"github.com/yeencloud/lib-shared/config"
 	"github.com/yeencloud/svc-gateway/internal/adapters/http"
@@ -28,8 +27,6 @@ func main() {
 
 		usecases := service.NewUsecases(endpointsConfig)
 		http.NewHTTPServer(httpServer, usecases)
-
-		spew.Dump(endpointsConfig)
 
 		return nil
 	})
