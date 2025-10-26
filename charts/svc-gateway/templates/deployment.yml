@@ -24,8 +24,10 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ .Chart.Name }}-metrics
+            {{ if .Values.ingress.enabled }}
             - configMapRef:
                 name: {{ .Chart.Name }}-redis
+            {{- end }}
     {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}

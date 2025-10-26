@@ -1,6 +1,6 @@
 nameOverride: svc-gateway
 
-image: 
+image:
   repository: ghcr.io/yeencloud/svc-gateway
   tag: latest
   pullPolicy: IfNotPresent
@@ -8,9 +8,9 @@ image:
 annotations:
 secretAnnotations:
 
-labels: {}
+labels: { }
 
-resources: 
+resources:
   replicas: 2
   requests:
     cpu: 200m
@@ -59,14 +59,17 @@ affinity:
 metrics:
   enabled: false
   provider: "none"
- 
+
 database:
   enabled: false
 
 httpServer:
   enabled: true
   port: 8080
-  
+
+redis:
+  enabled: false
+
 ingress:
   enabled: false
   className: ""
