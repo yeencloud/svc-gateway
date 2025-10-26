@@ -20,7 +20,7 @@ func (s *HTTPServer) registerRoutes(engine *gin.Engine) {
 }
 
 func (s *HTTPServer) graphqlHandler() gin.HandlerFunc {
-	h := handler.New(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
+	h := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
 	return func(c *gin.Context) {
 		h.ServeHTTP(c.Writer, c.Request)
 	}

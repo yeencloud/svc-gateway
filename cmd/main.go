@@ -4,7 +4,9 @@ import (
 	"context"
 
 	baseservice "github.com/yeencloud/lib-base"
+	"github.com/yeencloud/lib-shared/config"
 	"github.com/yeencloud/svc-gateway/internal/adapters/http"
+	gatewayConfig "github.com/yeencloud/svc-gateway/internal/domain/config"
 	"github.com/yeencloud/svc-gateway/internal/service"
 )
 
@@ -18,7 +20,12 @@ func main() {
 			return err
 		}
 
-		usecases := service.NewUsecases()
+		endpointsConfig, err := config.FetchConfig[gatewayConfig.EndpointsConfig]()
+		if err != nil {
+			return err
+		}
+
+		usecases := service.NewUsecases(endpointsConfig)
 		http.NewHTTPServer(httpServer, usecases)
 
 		return nil
