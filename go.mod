@@ -4,6 +4,7 @@ go 1.25
 
 require (
 	github.com/99designs/gqlgen v0.17.78
+	github.com/davecgh/go-spew v1.1.1
 	github.com/gin-gonic/gin v1.10.0
 	github.com/google/uuid v1.6.0
 	github.com/samber/lo v1.51.0
@@ -11,6 +12,7 @@ require (
 	github.com/vektah/gqlparser/v2 v2.5.30
 	github.com/yeencloud/lib-base v0.2.16
 	github.com/yeencloud/lib-httpserver v0.2.7
+	github.com/yeencloud/lib-shared v0.2.11
 	github.com/yeencloud/svc-identity v0.0.5
 	google.golang.org/grpc v1.75.0
 )
@@ -70,7 +72,6 @@ require (
 	github.com/yeencloud/lib-events v0.1.7 // indirect
 	github.com/yeencloud/lib-httpserver/contract v1.0.0 // indirect
 	github.com/yeencloud/lib-metrics v0.2.7 // indirect
-	github.com/yeencloud/lib-shared v0.2.11 // indirect
 	golang.org/x/arch v0.16.0 // indirect
 	golang.org/x/crypto v0.41.0 // indirect
 	golang.org/x/net v0.43.0 // indirect
