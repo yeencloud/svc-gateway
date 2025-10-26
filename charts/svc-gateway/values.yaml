@@ -59,10 +59,7 @@ affinity:
 metrics:
   enabled: false
   provider: "none"
-
-events:
-  enabled: false
-
+ 
 database:
   enabled: false
 
