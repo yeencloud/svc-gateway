@@ -9,7 +9,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/samber/lo v1.51.0
 	github.com/sirupsen/logrus v1.9.3
-	github.com/vektah/gqlparser/v2 v2.5.30
+	github.com/vektah/gqlparser/v2 v2.5.31
 	github.com/yeencloud/lib-base v0.2.16
 	github.com/yeencloud/lib-httpserver v0.2.7
 	github.com/yeencloud/lib-shared v0.2.11
