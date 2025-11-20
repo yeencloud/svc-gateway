@@ -10,7 +10,7 @@ require (
 	github.com/samber/lo v1.51.0
 	github.com/sirupsen/logrus v1.9.3
 	github.com/vektah/gqlparser/v2 v2.5.30
-	github.com/yeencloud/lib-base v0.2.16
+	github.com/yeencloud/lib-base v0.3.0
 	github.com/yeencloud/lib-httpserver v0.2.7
 	github.com/yeencloud/lib-shared v0.2.11
 	github.com/yeencloud/svc-identity v0.0.5
