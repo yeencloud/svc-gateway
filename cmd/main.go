@@ -39,7 +39,7 @@ func main() {
 			Usecases: usecases,
 		}
 
-		http.NewHTTPServer(httpServer, graphResolver)
+		http.NewHTTPServer(httpServer, graphResolver) //nolint:contextcheck
 
 		return nil
 	})

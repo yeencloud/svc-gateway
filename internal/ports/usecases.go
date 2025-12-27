@@ -5,6 +5,6 @@ import (
 )
 
 type Usecases interface {
-	//User
+	// User
 	RegisterUser(context context.Context) error
 }

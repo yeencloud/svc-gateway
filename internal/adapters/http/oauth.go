@@ -29,9 +29,9 @@ func (s *HTTPServer) authorizeClient() gin.HandlerFunc {
 			context.WithValue(c.Request.Context(), "gin_context", c),
 		)
 
-		if err := s.oauth.HandleAuthorizeRequest(c.Writer, c.Request); err == nil {
+		/*if err := s.oauth.HandleAuthorizeRequest(c.Writer, c.Request); err == nil {
 			_ = s.server.SessionDelete(c, "LoggedInUserID")
-		}
+		}*/
 	}
 }
 

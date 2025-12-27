@@ -9,16 +9,16 @@ import (
 func (s *HTTPServer) registerRoutes(engine *gin.Engine) {
 	engine.Static("/s", "./static")
 
-	//Setting up oauth routes
+	// Setting up oauth routes
 	oauth := engine.Group("/oauth")
 	oauth.Match([]string{"POST", "GET"}, "/authorize", s.authorizeClient())
 	oauth.POST("/token", s.handleToken())
 
-	//Setting up graphql playground
+	// Setting up graphql playground
 	debug := engine.Group("/debug")
 	debug.GET("/", s.playgroundHandler())
 
-	//Setting up graphql endpoint
+	// Setting up graphql endpoint
 	r := engine.Use(s.server.RequireCorrelationID, s.server.RequireRequestID)
 	r.POST("/query", s.graphqlHandler())
 }
