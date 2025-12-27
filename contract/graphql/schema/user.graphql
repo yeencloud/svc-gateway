@@ -6,10 +6,6 @@ extend type Mutation {
     createUser(input: CreateUserInput!): User!
 }
 
-directive @goField(
-    forceResolver: Boolean, name: String, omittable: Boolean, type: String
-) on FIELD_DEFINITION | INPUT_FIELD_DEFINITION
-
 type User {
     id: ID!
     name: String!

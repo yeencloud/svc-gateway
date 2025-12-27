@@ -1,2 +1,2 @@
-schema: graph/schema.graphql
-documents: 'graph/schema/*.graphqls'
+schema: contract/graphql/schema/*.graphql
+documents: 'contract/graphql/schema/*.graphql'

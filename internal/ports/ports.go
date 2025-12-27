@@ -1,4 +1,4 @@
 package ports
 
-type Ports struct {
+type Oauth interface {
 }

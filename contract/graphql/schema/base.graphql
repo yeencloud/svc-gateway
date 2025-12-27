@@ -1,0 +1,11 @@
+type Query {
+    ping: String!
+}
+
+type Mutation {
+    _empty: String
+}
+
+directive @goField(
+    forceResolver: Boolean, name: String, omittable: Boolean, type: String
+) on FIELD_DEFINITION | INPUT_FIELD_DEFINITION

@@ -2,37 +2,35 @@ package http
 
 import (
 	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
-	"github.com/yeencloud/svc-gateway/contract"
-	"github.com/yeencloud/svc-gateway/graph"
+	graphRuntime "github.com/yeencloud/svc-gateway/contract/graphql/generated"
 )
 
 func (s *HTTPServer) registerRoutes(engine *gin.Engine) {
+	engine.Static("/s", "./static")
+
+	//Setting up oauth routes
+	oauth := engine.Group("/oauth")
+	oauth.Match([]string{"POST", "GET"}, "/authorize", s.authorizeClient())
+	oauth.POST("/token", s.handleToken())
+
+	//Setting up graphql playground
 	debug := engine.Group("/debug")
-	r := engine.Use(s.server.RequireCorrelationID, s.server.RequireRequestID)
-
-	contract.RegisterRoutes(r, s)
-
-	r.POST("/query", s.graphqlHandler())
 	debug.GET("/", s.playgroundHandler())
+
+	//Setting up graphql endpoint
+	r := engine.Use(s.server.RequireCorrelationID, s.server.RequireRequestID)
+	r.POST("/query", s.graphqlHandler())
 }
 
 func (s *HTTPServer) graphqlHandler() gin.HandlerFunc {
-	h := handler.NewDefaultServer(graph.NewExecutableSchema(graph.Config{Resolvers: &graph.Resolver{}}))
-	return func(c *gin.Context) {
-		h.ServeHTTP(c.Writer, c.Request)
+	config := graphRuntime.Config{
+		Resolvers: s.resolvers,
 	}
-}
 
-func (s *HTTPServer) playgroundHandler() gin.HandlerFunc {
-	debugUuid := uuid.NewString()
+	executableSchema := graphRuntime.NewExecutableSchema(config)
 
-	h := playground.Handler("GraphQL", "/query", playground.WithGraphiqlFetcherHeaders(map[string]string{
-		"X-Request-ID":     debugUuid,
-		"X-Correlation-ID": debugUuid,
-	}))
+	h := handler.NewDefaultServer(executableSchema)
 
 	return func(c *gin.Context) {
 		h.ServeHTTP(c.Writer, c.Request)

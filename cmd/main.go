@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 
-	"github.com/davecgh/go-spew/spew"
 	baseservice "github.com/yeencloud/lib-base"
 	"github.com/yeencloud/lib-shared/config"
+	"github.com/yeencloud/svc-gateway/internal/adapters/graphql"
 	"github.com/yeencloud/svc-gateway/internal/adapters/http"
 	gatewayConfig "github.com/yeencloud/svc-gateway/internal/domain/config"
 	"github.com/yeencloud/svc-gateway/internal/service"
@@ -26,10 +26,20 @@ func main() {
 			return err
 		}
 
-		usecases := service.NewUsecases(endpointsConfig)
-		http.NewHTTPServer(httpServer, usecases)
+		gatewayConfig, err := config.FetchConfig[gatewayConfig.GatewayConfig]()
+		if err != nil {
+			return err
+		}
 
-		spew.Dump(endpointsConfig)
+		_ = gatewayConfig
+
+		usecases := service.NewUsecases(endpointsConfig)
+
+		graphResolver := &graphql.Resolver{
+			Usecases: usecases,
+		}
+
+		http.NewHTTPServer(httpServer, graphResolver)
 
 		return nil
 	})

@@ -9,3 +9,14 @@ lint:
 
 test:
 	go test -v ./...
+
+graphql:
+	go get -tool github.com/99designs/gqlgen
+	go tool gqlgen generate
+
+air:
+	@printf "\033]0;%s\007" "$(notdir $(CURDIR))"
+	@go tool air --build.cmd "go build -o ./tmp/$(notdir $(CURDIR))exe cmd/main.go" \
+	  --build.entrypoint "./tmp/$(notdir $(CURDIR))exe" \
+	  --build.include_file ".env" \
+	  --build.include_dir "../../libs"
